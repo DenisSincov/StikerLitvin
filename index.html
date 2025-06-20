@@ -3,55 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Litvin Stickers</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <title>Стикеры с Литвиным</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>🔥 Стикеры с Литвиным</h1>
-    <p>Оригинальные, дерзкие, мемные — бери, пока не сгорели!</p>
-    <button onclick="scrollToCatalog()">Смотреть каталог</button>
+    <h1>Стикеры с Литвиным</h1>
+    <button id="cart-btn">🛒 Корзина (<span id="cart-count">0</span>)</button>
   </header>
 
   <main>
-    <section id="catalog">
-      <h2>Каталог</h2>
-      <div class="stickers">
-        <div class="sticker-card">
-          <img src="https://i.imgur.com/ABCDE1.jpg" alt="Стикер 1">
-          <h3>🔥 Литвин в огне</h3>
-          <p>150₽</p>
-          <button onclick="addToCart('Литвин в огне')">В корзину</button>
-        </div>
-        <div class="sticker-card">
-          <img src="https://i.imgur.com/ABCDE2.jpg" alt="Стикер 2">
-          <h3>🚗 Литвин и тачка</h3>
-          <p>170₽</p>
-          <button onclick="addToCart('Литвин и тачка')">В корзину</button>
-        </div>
-        <div class="sticker-card">
-          <img src="https://i.imgur.com/ABCDE3.jpg" alt="Стикер 3">
-          <h3>💬 Цитата Литвина</h3>
-          <p>120₽</p>
-          <button onclick="addToCart('Цитата Литвина')">В корзину</button>
-        </div>
+    <section class="products">
+      <div class="product" data-id="1" data-name="Стикер Мем 1" data-price="100" data-image="images/litvin1.jpg" data-desc="Литвин удивлён — классика!">
+        <img src="images/litvin1.jpg" alt="Литвин 1" />
+        <h3>Стикер Мем 1</h3>
+        <p>100 ₽</p>
+        <button class="view-btn">Посмотреть</button>
       </div>
-    </section>
-
-    <section id="cart">
-      <h2>🛒 Ваша корзина</h2>
-      <ul id="cart-items"></ul>
+      <div class="product" data-id="2" data-name="Стикер Мем 2" data-price="120" data-image="images/litvin2.jpg" data-desc="Классическая реакция Литвина на обман.">
+        <img src="images/litvin2.jpg" alt="Литвин 2" />
+        <h3>Стикер Мем 2</h3>
+        <p>120 ₽</p>
+        <button class="view-btn">Посмотреть</button>
+      </div>
+      <div class="product" data-id="3" data-name="Стикер Мем 3" data-price="90" data-image="images/litvin3.jpg" data-desc="Литвин: когда всё по кайфу.">
+        <img src="images/litvin3.jpg" alt="Литвин 3" />
+        <h3>Стикер Мем 3</h3>
+        <p>90 ₽</p>
+        <button class="view-btn">Посмотреть</button>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Litvin Stickers</p>
-    <form id="contact-form">
-      <label for="email">Подпишитесь на новости:</label>
-      <input type="email" id="email" placeholder="Ваш email" required>
-      <button type="submit">Отправить</button>
-    </form>
-  </footer>
+  <!-- Модальное окно карточки -->
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <img id="modal-image" src="" alt="" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+      <p id="modal-price"></p>
+      <button id="add-to-cart-modal">Добавить в корзину</button>
+      <button id="close-modal">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно корзины -->
+  <div class="modal" id="cart-modal">
+    <div class="modal-content">
+      <h2>Корзина</h2>
+      <ul id="cart-items"></ul>
+      <p>Итого: <span id="cart-total">0</span> ₽</p>
+      <button id="close-cart">Закрыть</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
