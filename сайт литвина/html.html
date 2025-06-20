@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Litvin Stickers</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>🔥 Стикеры с Литвиным</h1>
+    <p>Оригинальные, дерзкие, мемные — бери, пока не сгорели!</p>
+    <button onclick="scrollToCatalog()">Смотреть каталог</button>
+  </header>
+
+  <main>
+    <section id="catalog">
+      <h2>Каталог</h2>
+      <div class="stickers">
+        <div class="sticker-card">
+          <img src="https://i.imgur.com/ABCDE1.jpg" alt="Стикер 1">
+          <h3>🔥 Литвин в огне</h3>
+          <p>150₽</p>
+          <button onclick="addToCart('Литвин в огне')">В корзину</button>
+        </div>
+        <div class="sticker-card">
+          <img src="https://i.imgur.com/ABCDE2.jpg" alt="Стикер 2">
+          <h3>🚗 Литвин и тачка</h3>
+          <p>170₽</p>
+          <button onclick="addToCart('Литвин и тачка')">В корзину</button>
+        </div>
+        <div class="sticker-card">
+          <img src="https://i.imgur.com/ABCDE3.jpg" alt="Стикер 3">
+          <h3>💬 Цитата Литвина</h3>
+          <p>120₽</p>
+          <button onclick="addToCart('Цитата Литвина')">В корзину</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="cart">
+      <h2>🛒 Ваша корзина</h2>
+      <ul id="cart-items"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Litvin Stickers</p>
+    <form id="contact-form">
+      <label for="email">Подпишитесь на новости:</label>
+      <input type="email" id="email" placeholder="Ваш email" required>
+      <button type="submit">Отправить</button>
+    </form>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
